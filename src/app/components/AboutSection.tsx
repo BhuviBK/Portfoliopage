@@ -1,9 +1,10 @@
-import image_b5f7c65cbf877b7a2a7c3be619c673ad6815429a from 'figma:asset/b5f7c65cbf877b7a2a7c3be619c673ad6815429a.png'
+
 import { motion } from "motion/react";
 import { MapPin, Briefcase, Layers, CheckCircle } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import { t, gc } from "../styles/glassStyles";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import resumePdf from "../../resource/Bhuvanesh_2025.pdf";
 
 const PROFILE_PHOTO = "https://images.unsplash.com/photo-1545112969-bdd91ef544c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMGluZGlhbiUyMG1hbGUlMjBwcm9mZXNzaW9uYWwlMjBkZXNpZ25lciUyMGhlYWRzaG90fGVufDF8fHx8MTc3MjQzMTE3NHww&ixlib=rb-4.1.0&q=80&w=1080";
 
@@ -11,16 +12,16 @@ const BIO_TEXT =
   "I'm a UI Designer with 3+ years of experience in building applications, dashboards and conversational UIs with strategies to user-specific solutions, design systems, and creating high-fidelity UI in Figma. My passion lies at the intersection of Product Design and seamless user experiences — from early wireframes all the way to polished, developer-ready design systems.";
 
 const infoCards = [
-  { icon: MapPin,       label: "Location",   value: "Creative Tamilnadu" },
-  { icon: Briefcase,    label: "Experience", value: "3+ Years in UI/UX"  },
-  { icon: Layers,       label: "Specialty",  value: "14+ UI Designs, Graphic Design" },
-  { icon: CheckCircle,  label: "Status",     value: "Available ✦"        },
+  { icon: MapPin, label: "Location", value: "Creative Tamilnadu" },
+  { icon: Briefcase, label: "Experience", value: "3+ Years in UI/UX" },
+  { icon: Layers, label: "Specialty", value: "14+ UI Designs, Graphic Design" },
+  { icon: CheckCircle, label: "Status", value: "Available ✦" },
 ];
 
 const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
 const itemVariants = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
 export function AboutSection() {
@@ -74,20 +75,20 @@ export function AboutSection() {
                   }}
                 >
                   <ImageWithFallback
-                    src={image_b5f7c65cbf877b7a2a7c3be619c673ad6815429a}
+                    src={PROFILE_PHOTO}
                     alt="Bhuvanesh — UI Designer"
                     style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }}
                   />
 
                   {/* Frosted overlay at bottom */}
-                  
+
                 </div>
 
                 {/* Floating badge — top-right */}
-                
+
 
                 {/* Experience chip — bottom-left */}
-                
+
               </div>
             </motion.div>
 
@@ -130,15 +131,16 @@ export function AboutSection() {
 
               {/* Download CV */}
               <motion.div variants={itemVariants}>
-                <motion.button
+                <motion.a
+                  href={resumePdf}
+                  download="Bhuvanesh_2025.pdf"
                   whileHover={isGlass ? { y: -3, boxShadow: "0 8px 28px rgba(0,0,0,0.24)" } : { y: -3, boxShadow: "7px 7px 0 #2C2C2C" }}
                   whileTap={isGlass ? { y: 1 } : { y: 1, boxShadow: "2px 2px 0 #2C2C2C" }}
-                  className="w-full py-4 rounded-2xl"
-                  style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 16, cursor: "pointer", transition: "box-shadow 0.18s, transform 0.18s", borderRadius: 16, ...s.btnPrimary }}
-                  onClick={() => window.open("/resume.pdf", "_blank")}
+                  className="w-full py-4 rounded-2xl block text-center no-underline"
+                  style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 16, cursor: "pointer", transition: "box-shadow 0.18s, transform 0.18s", borderRadius: 16, textDecoration: "none", ...s.btnPrimary }}
                 >
                   Download CV ↓
-                </motion.button>
+                </motion.a>
               </motion.div>
             </div>
           </div>

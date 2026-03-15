@@ -5,15 +5,15 @@ import { t, gc } from "../styles/glassStyles";
 
 const socials = [
   { icon: Linkedin, label: "LinkedIn", handle: "@yourhandle", color: "#0A66C2" },
-  { icon: Twitter,  label: "Twitter",  handle: "@yourhandle", color: "#1DA1F2" },
-  { icon: Github,   label: "GitHub",   handle: "@yourhandle", color: "#2C2C2C" },
-  { icon: Mail,     label: "Email",    handle: "hello@you.com", color: "#7B8C2E" },
+  { icon: Twitter, label: "Twitter", handle: "@yourhandle", color: "#1DA1F2" },
+  { icon: Github, label: "GitHub", handle: "@yourhandle", color: "#2C2C2C" },
+  { icon: Mail, label: "Email", handle: "hello@you.com", color: "#7B8C2E" },
 ];
 
 const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
 const itemVariants = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
 /** Reusable frosted input placeholder */

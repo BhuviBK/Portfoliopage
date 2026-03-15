@@ -4,12 +4,12 @@ import { useTheme } from "../context/ThemeContext";
 import { t, gc } from "../styles/glassStyles";
 
 const skills = [
-  { icon: Figma,         label: "Figma",                        level: 90, color: "#7B8C2E" },
-  { icon: Video,         label: "Vibe Coding - ClaudeAI, Cloudflare", level: 85, color: "#A8C042" },
-  { icon: Layers,        label: "Prototyping & Wireframing",    level: 60, color: "#5A6620" },
-  { icon: Code2,         label: "Dev- Angular",                 level: 50, color: "#7B8C2E" },
-  { icon: MessageSquare, label: "Conversational UX",            level: 88, color: "#A8C042" },
-  { icon: LayoutGrid,    label: "Design Systems",               level: 78, color: "#5A6620" },
+  { icon: Figma, label: "Figma", level: 90, color: "#7B8C2E" },
+  { icon: Video, label: "Vibe Coding - ClaudeAI, Cloudflare", level: 85, color: "#A8C042" },
+  { icon: Layers, label: "Prototyping & Wireframing", level: 60, color: "#5A6620" },
+  { icon: Code2, label: "Dev- Angular", level: 50, color: "#7B8C2E" },
+  { icon: MessageSquare, label: "Conversational UX", level: 88, color: "#A8C042" },
+  { icon: LayoutGrid, label: "Design Systems", level: 78, color: "#5A6620" },
 ];
 
 const toolTags = [
@@ -21,7 +21,7 @@ const toolTags = [
 const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.09 } } };
 const itemVariants = {
   hidden: { opacity: 0, y: 24 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
 function SkillBar({
@@ -108,41 +108,41 @@ export function SkillsSection() {
 
           {/* Tools tag cloud */}
           <motion.div variants={itemVariants}>
-            <div className="rounded-3xl px-5 py-3" style={{ ...s.accentCard, borderRadius: 24 }}>
-              <div className="flex items-center gap-2 mb-2">
+            <div className="rounded-3xl px-6 py-5" style={{ ...s.accentCard, borderRadius: 24 }}>
+              <div className="flex items-center gap-2 mb-4">
                 <span style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 13, color: isGlass ? gc.mid : "#5A6620" }}>
                   🛠 Tools I Use
                 </span>
               </div>
-              <motion.div variants={containerVariants} className="flex flex-nowrap gap-2 overflow-x-auto" style={{ scrollbarWidth: "none" }}>
+              <motion.div variants={containerVariants} className="flex flex-wrap gap-3 items-center justify-center">
                 {toolTags.filter(tool => tool !== "Protopie").map((tool, i) => (
                   <motion.span
                     key={tool}
                     variants={itemVariants}
                     whileHover={{ y: -2, scale: 1.05 }}
-                    className="px-4 py-2 rounded-xl cursor-default flex-shrink-0"
+                    className="px-4 py-2 rounded-xl cursor-default"
                     style={isGlass
                       ? {
-                          fontFamily: "'Nunito', sans-serif",
-                          fontWeight: 800,
-                          fontSize: 14,
-                          display: "inline-block",
-                          color:          "#ffffff",
-                          background:     "rgba(22,26,40,0.72)",
-                          backdropFilter: "blur(12px)",
-                          border:         "1px solid rgba(255,255,255,0.52)",
-                          boxShadow:      "0 2px 10px rgba(0,0,0,0.06)",
-                        }
+                        fontFamily: "'Nunito', sans-serif",
+                        fontWeight: 800,
+                        fontSize: 14,
+                        display: "inline-block",
+                        color: "#ffffff",
+                        background: "rgba(22,26,40,0.72)",
+                        backdropFilter: "blur(12px)",
+                        border: "1px solid rgba(255,255,255,0.52)",
+                        boxShadow: "0 2px 10px rgba(0,0,0,0.06)",
+                      }
                       : {
-                          fontFamily: "'Nunito', sans-serif",
-                          fontWeight: 800,
-                          fontSize: 14,
-                          display: "inline-block",
-                          color:      "#ffffff",
-                          background: "#7B8C2E",
-                          border:     "2.5px solid #2C2C2C",
-                          boxShadow:  "3px 3px 0 #2C2C2C",
-                        }}
+                        fontFamily: "'Nunito', sans-serif",
+                        fontWeight: 800,
+                        fontSize: 14,
+                        display: "inline-block",
+                        color: "#ffffff",
+                        background: "#7B8C2E",
+                        border: "2.5px solid #2C2C2C",
+                        boxShadow: "3px 3px 0 #2C2C2C",
+                      }}
                   >
                     {tool}
                   </motion.span>

@@ -2,20 +2,20 @@ import { Menu, X, Download, Sparkles, Paintbrush } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useTheme } from "../context/ThemeContext";
-
+import resumePdf from "../../resource/Bhuvanesh_2025.pdf";
 const navLinks = [
-  { label: "Home",     href: "#home"     },
-  { label: "About",    href: "#about"    },
-  { label: "Skills",   href: "#skills"   },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
-  { label: "Contact",  href: "#contact"  },
+  { label: "Contact", href: "#contact" },
 ];
 
 export function Navbar() {
-  const [scrolled, setScrolled]     = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [active, setActive]         = useState("Home");
-  const { isGlass, toggleTheme }    = useTheme();
+  const [active, setActive] = useState("Home");
+  const { isGlass, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -86,7 +86,7 @@ export function Navbar() {
             <span style={{ color: isGlass ? "#e8eaf0" : "#D4E877", fontSize: 18, fontWeight: 900 }}>✦</span>
           </div>
           <span style={{ fontWeight: 900, fontSize: 20, color: isGlass ? "#1e2030" : "#2C2C2C" }}>
-            port<span style={{ color: isGlass ? "#3d4258" : "#7B8C2E" }}>folio</span>
+            Bhu<span style={{ color: isGlass ? "#3d4258" : "#7B8C2E" }}>vanesh</span>
           </span>
         </motion.div>
 
@@ -128,17 +128,18 @@ export function Navbar() {
           </motion.button>
 
           {/* Resume */}
-          <motion.button
-            onClick={() => window.open("/resume.pdf", "_blank")}
+          <motion.a
+            href={resumePdf}
+            download="Bhuvanesh_2025.pdf"
             whileHover={isGlass ? { scale: 1.06, y: -2, boxShadow: "0 8px 24px rgba(0,0,0,0.26)" } : { scale: 1.06, y: -2 }}
             whileTap={{ scale: 0.95, y: 1 }}
-            className="ml-1 px-5 py-2.5 rounded-xl inline-flex items-center gap-2"
+            className="ml-1 px-5 py-2.5 rounded-xl inline-flex items-center gap-2 no-underline"
             style={isGlass
-              ? { fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 15, color: "#ffffff", background: "rgba(22,26,40,0.82)", backdropFilter: "blur(14px)", border: "1px solid rgba(255,255,255,0.20)", boxShadow: "0 4px 20px rgba(0,0,0,0.22)", cursor: "pointer" }
-              : { fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 15, color: "#ffffff", background: "#5A6620", border: "3px solid #2C2C2C", boxShadow: "4px 4px 0 #2C2C2C", cursor: "pointer" }}
+              ? { fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 15, color: "#ffffff", background: "rgba(22,26,40,0.82)", backdropFilter: "blur(14px)", border: "1px solid rgba(255,255,255,0.20)", boxShadow: "0 4px 20px rgba(0,0,0,0.22)", cursor: "pointer", textDecoration: "none" }
+              : { fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 15, color: "#ffffff", background: "#5A6620", border: "3px solid #2C2C2C", boxShadow: "4px 4px 0 #2C2C2C", cursor: "pointer", textDecoration: "none" }}
           >
             <Download size={15} strokeWidth={3} /> Resume
-          </motion.button>
+          </motion.a>
         </div>
 
         {/* ── Mobile Menu Button ── */}
@@ -159,8 +160,8 @@ export function Navbar() {
         {mobileOpen && (
           <motion.div
             initial={{ opacity: 0, y: -20, height: 0 }}
-            animate={{ opacity: 1, y: 0,  height: "auto" }}
-            exit={{ opacity: 0, y: -20,   height: 0 }}
+            animate={{ opacity: 1, y: 0, height: "auto" }}
+            exit={{ opacity: 0, y: -20, height: 0 }}
             transition={{ duration: 0.25 }}
             className="md:hidden mt-3 rounded-2xl p-4 flex flex-col gap-2"
             style={isGlass

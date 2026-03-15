@@ -4,15 +4,15 @@ import { useTheme } from "../context/ThemeContext";
 import { t, gc } from "../styles/glassStyles";
 
 const projects = [
-  { id: 1, tag: "Mobile App",  title: "Project Title One",   desc: "[ Add project description — UI/UX case study, user flow, wireframes ]",         chips: ["Figma", "UX Research", "Prototyping"], accent: "#7B8C2E", bg: "#F2F6DB" },
-  { id: 2, tag: "Web Design",  title: "Project Title Two",   desc: "[ Add project description — branding, design system, responsive layout ]",      chips: ["Design System", "Branding", "Figma"],   accent: "#5A6620", bg: "#EFF2D8" },
-  { id: 3, tag: "Dashboard",   title: "Project Title Three", desc: "[ Add project description — data viz, dashboard, interaction design ]",          chips: ["Data Viz", "Dashboard", "UX"],          accent: "#7B8C2E", bg: "#F2F6DB" },
+  { id: 1, tag: "Mobile App", title: "Project Title One", desc: "[ Add project description — UI/UX case study, user flow, wireframes ]", chips: ["Figma", "UX Research", "Prototyping"], accent: "#7B8C2E", bg: "#F2F6DB" },
+  { id: 2, tag: "Web Design", title: "Project Title Two", desc: "[ Add project description — branding, design system, responsive layout ]", chips: ["Design System", "Branding", "Figma"], accent: "#5A6620", bg: "#EFF2D8" },
+  { id: 3, tag: "Dashboard", title: "Project Title Three", desc: "[ Add project description — data viz, dashboard, interaction design ]", chips: ["Data Viz", "Dashboard", "UX"], accent: "#7B8C2E", bg: "#F2F6DB" },
 ];
 
 const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.12 } } };
 const cardVariants = {
   hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] } },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] as const } },
 };
 
 function ProjectCard({ project, isGlass }: { project: typeof projects[0]; isGlass: boolean }) {
@@ -36,8 +36,8 @@ function ProjectCard({ project, isGlass }: { project: typeof projects[0]; isGlas
         }}
       >
         <svg className="absolute inset-0 w-full h-full opacity-20" viewBox="0 0 300 200" preserveAspectRatio="none">
-          {[50,100,150].map(y => <line key={y} x1="0" y1={y} x2="300" y2={y} stroke={isGlass ? "#6070a0" : "#7B8C2E"} strokeWidth="1.5" />)}
-          {[75,150,225].map(x => <line key={x} x1={x} y1="0" x2={x} y2="200" stroke={isGlass ? "#6070a0" : "#7B8C2E"} strokeWidth="1.5" />)}
+          {[50, 100, 150].map(y => <line key={y} x1="0" y1={y} x2="300" y2={y} stroke={isGlass ? "#6070a0" : "#7B8C2E"} strokeWidth="1.5" />)}
+          {[75, 150, 225].map(x => <line key={x} x1={x} y1="0" x2={x} y2="200" stroke={isGlass ? "#6070a0" : "#7B8C2E"} strokeWidth="1.5" />)}
         </svg>
         {/* Placeholder */}
         <div className="flex flex-col items-center justify-center rounded-2xl px-6 py-4 z-10"
@@ -137,22 +137,6 @@ export function ProjectsSection() {
             ))}
           </motion.div>
 
-          {/* Add more placeholder */}
-          <motion.div variants={cardVariants} className="mt-6">
-            <motion.div
-              whileHover={isGlass ? { y: -4, boxShadow: "0 12px 32px rgba(0,0,0,0.10)" } : { y: -4, boxShadow: "7px 7px 0 #2C2C2C" }}
-              className="rounded-3xl p-6 flex items-center justify-center gap-4 cursor-pointer"
-              style={isGlass
-                ? { background: "rgba(255,255,255,0.16)", backdropFilter: "blur(14px)", border: "1.5px dashed rgba(255,255,255,0.45)", transition: "box-shadow 0.18s" }
-                : { background: "transparent", border: "3px dashed #A8C042", transition: "box-shadow 0.18s" }}>
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={s.iconBg}>
-                <span style={{ fontSize: 20, color: isGlass ? gc.mid : undefined }}>＋</span>
-              </div>
-              <span style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 15, color: isGlass ? gc.mid : "#7B8C2E" }}>
-                [ Add More Projects Here ]
-              </span>
-            </motion.div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
