@@ -30,18 +30,18 @@ export function Footer() {
             <span style={{ color: isGlass ? "#e8eaf0" : "#D4E877", fontSize: 18, fontWeight: 900 }}>✦</span>
           </div>
           <span style={{ fontWeight: 900, fontSize: 18, color: isGlass ? gc.dark : "#ffffff" }}>
-            port<span style={{ color: isGlass ? gc.mid : "#D4E877" }}>folio</span>
+            Bhu<span style={{ color: isGlass ? "#3d4258" : "#7B8C2E" }}>vanesh</span>
           </span>
         </div>
 
         {/* Center */}
-        <p style={{ fontWeight: 700, fontSize: 14, color: isGlass ? "#6b7280" : "#888", margin: 0, textAlign: "center" }}>
+        {/* <p style={{ fontWeight: 700, fontSize: 14, color: isGlass ? "#6b7280" : "#888", margin: 0, textAlign: "center" }}>
           Designed with{" "}
           <motion.span animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 1.5, repeat: Infinity }} style={{ display: "inline-block" }}>
             💚
           </motion.span>{" "}
           &amp; lots of coffee ☕
-        </p>
+        </p> */}
 
         {/* Back to top */}
         <motion.button

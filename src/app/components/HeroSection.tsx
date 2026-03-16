@@ -6,9 +6,9 @@ import { t, gc } from "../styles/glassStyles";
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 const statData = [
-  { value: "3+",  label: "Years Exp" },
-  { value: "20+", label: "Projects"  },
-  { value: "10+", label: "Clients"   },
+  { value: "4+", label: "Years Exp" },
+  { value: "10", label: "Projects" },
+  { value: "4", label: "Clients" },
 ];
 
 function scrollToSection(id: string) {
@@ -68,7 +68,7 @@ function DesignMockup({ isGlass }: { isGlass: boolean }) {
             <div className="h-5 rounded-full" style={{ background: isGlass ? "rgba(30,32,48,0.55)" : "#2C2C2C", width: "80%" }} />
             <div className="h-5 rounded-full" style={{ background: isGlass ? "rgba(30,32,48,0.45)" : "#2C2C2C", width: "65%" }} />
             <div className="h-3 rounded-full mt-1" style={{ background: isGlass ? "rgba(100,108,135,0.35)" : "#A8C042", width: "90%" }} />
-            <div className="h-3 rounded-full"     style={{ background: isGlass ? "rgba(100,108,135,0.28)" : "#A8C042", width: "75%" }} />
+            <div className="h-3 rounded-full" style={{ background: isGlass ? "rgba(100,108,135,0.28)" : "#A8C042", width: "75%" }} />
             <div className="flex gap-2 mt-2">
               <div className="h-9 w-28 rounded-xl"
                 style={{ background: isGlass ? "rgba(22,26,40,0.72)" : "#7B8C2E", border: isGlass ? "none" : "2px solid #2C2C2C" }} />
@@ -103,8 +103,8 @@ function DesignMockup({ isGlass }: { isGlass: boolean }) {
       >
         <div className="flex gap-1">
           {(isGlass
-            ? ["#3d4258","#5a6278","#8890a8","#c8cdd8","#1e2030"]
-            : ["#7B8C2E","#A8C042","#D4E877","#F2F6DB","#2C2C2C"]
+            ? ["#3d4258", "#5a6278", "#8890a8", "#c8cdd8", "#1e2030"]
+            : ["#7B8C2E", "#A8C042", "#D4E877", "#F2F6DB", "#2C2C2C"]
           ).map((c) => (
             <div key={c} className="w-5 h-5 rounded-md"
               style={{ background: c, border: isGlass ? "none" : "1.5px solid #2C2C2C" }} />
@@ -180,7 +180,7 @@ export function HeroSection() {
 
           {/* Tagline */}
           <motion.div initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: EASE, delay: 0.3 }} className="w-full max-w-lg">
-            
+
           </motion.div>
 
           {/* CTA Buttons */}
@@ -203,7 +203,7 @@ export function HeroSection() {
             </motion.button>
           </motion.div>
 
-          {/* Stats + Available */}
+
           <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.65, ease: EASE, delay: 0.54 }} className="flex gap-4 flex-wrap">
             {statData.map((stat, i) => (
               <motion.div
@@ -217,21 +217,7 @@ export function HeroSection() {
                 <span style={{ fontWeight: 700, fontSize: 11, color: "#666", marginTop: 2 }}>{stat.label}</span>
               </motion.div>
             ))}
-            {/* Available badge */}
-            <motion.div
-              initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: EASE, delay: 0.84 }}
-              className="flex items-center gap-2 px-4 py-3 rounded-2xl"
-              style={isGlass
-                ? { ...s.accentCard, borderRadius: 16 }
-                : { background: "#D4E877", border: "3px solid #2C2C2C", boxShadow: "4px 4px 0 #2C2C2C", borderRadius: 16 }}
-            >
-              <div className="w-2.5 h-2.5 rounded-full animate-pulse"
-                style={{ background: isGlass ? gc.mid : "#5A6620" }} />
-              <span style={{ fontWeight: 800, fontSize: 13, color: isGlass ? gc.dark : "#3D4A18" }}>
-                Available for work
-              </span>
-            </motion.div>
+
           </motion.div>
         </div>
 

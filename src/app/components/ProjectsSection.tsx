@@ -112,7 +112,7 @@ export function ProjectsSection() {
 
           {/* Header */}
           <motion.div variants={cardVariants} className="flex items-end justify-between mb-12 flex-wrap gap-4">
-            <div className="flex flex-col gap-3">
+            <div className="flex flex-col items-start gap-3">
               <span style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 13, borderRadius: 10, padding: "3px 14px", display: "inline-block", ...s.tag }}>
                 ✦ My Work
               </span>

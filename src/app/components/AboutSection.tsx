@@ -5,16 +5,15 @@ import { useTheme } from "../context/ThemeContext";
 import { t, gc } from "../styles/glassStyles";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import resumePdf from "../../resource/Bhuvanesh_2025.pdf";
-
-const PROFILE_PHOTO = "https://images.unsplash.com/photo-1545112969-bdd91ef544c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx5b3VuZyUyMGluZGlhbiUyMG1hbGUlMjBwcm9mZXNzaW9uYWwlMjBkZXNpZ25lciUyMGhlYWRzaG90fGVufDF8fHx8MTc3MjQzMTE3NHww&ixlib=rb-4.1.0&q=80&w=1080";
+import PROFILE_PHOTO from "../../assets/profile.png";
 
 const BIO_TEXT =
   "I'm a UI Designer with 3+ years of experience in building applications, dashboards and conversational UIs with strategies to user-specific solutions, design systems, and creating high-fidelity UI in Figma. My passion lies at the intersection of Product Design and seamless user experiences — from early wireframes all the way to polished, developer-ready design systems.";
 
 const infoCards = [
-  { icon: MapPin, label: "Location", value: "Creative Tamilnadu" },
-  { icon: Briefcase, label: "Experience", value: "3+ Years in UI/UX" },
-  { icon: Layers, label: "Specialty", value: "14+ UI Designs, Graphic Design" },
+  { icon: MapPin, label: "Location", value: "Chennai, Tamilnadu" },
+  { icon: Briefcase, label: "Experience", value: "4+ Years in UI/UX" },
+  { icon: Layers, label: "Specialty", value: "14+ UI Designs, AI UI/UX" },
   { icon: CheckCircle, label: "Status", value: "Available ✦" },
 ];
 
@@ -139,7 +138,7 @@ export function AboutSection() {
                   className="w-full py-4 rounded-2xl block text-center no-underline"
                   style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 16, cursor: "pointer", transition: "box-shadow 0.18s, transform 0.18s", borderRadius: 16, textDecoration: "none", ...s.btnPrimary }}
                 >
-                  Download CV ↓
+                  Download Resume
                 </motion.a>
               </motion.div>
             </div>
