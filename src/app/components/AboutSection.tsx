@@ -5,7 +5,7 @@ import { useTheme } from "../context/ThemeContext";
 import { t, gc } from "../styles/glassStyles";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import resumePdf from "../../resource/Bhuvanesh_2025.pdf";
-import PROFILE_PHOTO from "/src/resource/3-small.png";
+import PROFILE_PHOTO from "../../resource/3-small.png";
 
 const BIO_TEXT =
   "I'm a UI Designer with 3+ years of experience in building applications, dashboards and conversational UIs with strategies to user-specific solutions, design systems, and creating high-fidelity UI in Figma. My passion lies at the intersection of Product Design and seamless user experiences — from early wireframes all the way to polished, developer-ready design systems.";
