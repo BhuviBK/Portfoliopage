@@ -35,13 +35,13 @@ export function Footer() {
         </div>
 
         {/* Center */}
-        {/* <p style={{ fontWeight: 700, fontSize: 14, color: isGlass ? "#6b7280" : "#888", margin: 0, textAlign: "center" }}>
-          Designed with{" "}
+        <p style={{ fontWeight: 700, fontSize: 14, color: isGlass ? "#6b7280" : "#888", margin: 0, textAlign: "center" }}>
+          Designed with{" me "}
           <motion.span animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 1.5, repeat: Infinity }} style={{ display: "inline-block" }}>
             💚
           </motion.span>{" "}
-          &amp; lots of coffee ☕
-        </p> */}
+          &amp; Thanks for Scrolling
+        </p>
 
         {/* Back to top */}
         <motion.button

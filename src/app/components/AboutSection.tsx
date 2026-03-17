@@ -5,10 +5,10 @@ import { useTheme } from "../context/ThemeContext";
 import { t, gc } from "../styles/glassStyles";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import resumePdf from "../../resource/Bhuvanesh_2025.pdf";
-import PROFILE_PHOTO from "../../resource/3-small.png";
+import PROFILE_PHOTO from "../../resource/Aboutme.jpg";
 
 const BIO_TEXT =
-  "I'm a UI Designer with 3+ years of experience in building applications, dashboards and conversational UIs with strategies to user-specific solutions, design systems, and creating high-fidelity UI in Figma. My passion lies at the intersection of Product Design and seamless user experiences — from early wireframes all the way to polished, developer-ready design systems.";
+  "I’m a UI Designer with 3+ years of experience designing applications, dashboards, and conversational interfaces that turn complex problems into intuitive, user-friendly experiences. I focus on creating user-centric solutions, building scalable design systems, and crafting high-fidelity interfaces in Figma that are ready for seamless developer handoff. I enjoy experimenting with building real products and have hosted 3+ real-time applications using Vibecode that solve everyday challenges for designers and users.";
 
 const infoCards = [
   { icon: MapPin, label: "Location", value: "Chennai, Tamilnadu" },
@@ -30,7 +30,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="relative pt-10 pb-24 overflow-hidden"
+      className="relative py-16 overflow-hidden"
       style={{
         background: isGlass ? "transparent" : "linear-gradient(180deg, #EBF2D0 0%, #E8F0CA 40%, #F2F6DB 100%)",
         fontFamily: "'Nunito', sans-serif",
@@ -55,16 +55,19 @@ export function AboutSection() {
             <div className="rounded-full" style={{ width: 60, height: 5, ...s.rule }} />
           </motion.div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="flex flex-col gap-4">
 
-            {/* ── LEFT: Profile photo ── */}
-            <motion.div variants={itemVariants} className="flex justify-center lg:justify-start">
-              <div className="relative">
-                {/* Photo card */}
+            {/* ── TOP: Profile Photo + Info Grid ── */}
+            <div className="grid lg:grid-cols-3 gap-4 items-stretch">
+
+              {/* Left Column: Profile photo (Spans 1/3) */}
+              <motion.div variants={itemVariants} className="lg:col-span-1 h-full">
                 <div
-                  className="rounded-3xl overflow-hidden"
+                  className="rounded-3xl overflow-hidden h-full"
                   style={{
-                    width: 300, height: 370,
+                    width: "100%",
+                    minHeight: 220,
+                    maxHeight: 280,
                     border: isGlass ? "1px solid rgba(255,255,255,0.55)" : "4px solid #2C2C2C",
                     boxShadow: isGlass
                       ? "0 16px 48px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.7)"
@@ -78,39 +81,11 @@ export function AboutSection() {
                     alt="Bhuvanesh — UI Designer"
                     style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top center", display: "block" }}
                   />
-
-                  {/* Frosted overlay at bottom */}
-
-                </div>
-
-                {/* Floating badge — top-right */}
-
-
-                {/* Experience chip — bottom-left */}
-
-              </div>
-            </motion.div>
-
-            {/* ── RIGHT: Bio + Info cards ── */}
-            <div className="flex flex-col gap-6">
-
-              {/* Bio text card */}
-              <motion.div variants={itemVariants}>
-                <div className="rounded-2xl p-6" style={{ ...s.card, borderRadius: 20 }}>
-                  <div className="flex items-center gap-2 mb-4">
-                    <div className="w-2.5 h-2.5 rounded-full" style={{ background: isGlass ? "rgba(80,88,115,0.55)" : "#7B8C2E" }} />
-                    <span style={{ fontWeight: 800, fontSize: 12, color: isGlass ? gc.light : "#7B8C2E" }}>
-                      About Me
-                    </span>
-                  </div>
-                  <p style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 600, fontSize: 14, color: isGlass ? "#3d4258" : "#444", lineHeight: 1.75, margin: 0 }}>
-                    {BIO_TEXT}
-                  </p>
                 </div>
               </motion.div>
 
-              {/* Info cards grid */}
-              <motion.div variants={containerVariants} className="grid grid-cols-2 gap-3">
+              {/* Right Column: Info Cards (Spans 2/3) */}
+              <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {infoCards.map((card) => (
                   <motion.div
                     key={card.label}
@@ -119,29 +94,47 @@ export function AboutSection() {
                     className="rounded-2xl p-4 flex flex-col gap-2"
                     style={{ ...s.card, cursor: "default", transition: "box-shadow 0.2s, transform 0.2s", borderRadius: 16 }}
                   >
-                    <div className="w-8 h-8 rounded-xl flex items-center justify-center" style={s.iconBg}>
-                      <card.icon size={15} strokeWidth={2.5} color={isGlass ? gc.mid : "#3D4A18"} />
+                    <div className="w-9 h-9 rounded-xl flex items-center justify-center" style={s.iconBg}>
+                      <card.icon size={16} strokeWidth={2.5} color={isGlass ? gc.mid : "#3D4A18"} />
                     </div>
-                    <span style={{ fontWeight: 700, fontSize: 11, color: "#888" }}>{card.label}</span>
-                    <span style={{ fontWeight: 800, fontSize: 13, color: "#2C2C2C", lineHeight: 1.3 }}>{card.value}</span>
+                    <div>
+                      <span style={{ fontWeight: 700, fontSize: 11, color: "#888", display: "block", marginBottom: 2 }}>{card.label}</span>
+                      <span style={{ fontWeight: 800, fontSize: 14, color: "#2C2C2C", lineHeight: 1.3 }}>{card.value}</span>
+                    </div>
                   </motion.div>
                 ))}
-              </motion.div>
-
-              {/* Download CV */}
-              <motion.div variants={itemVariants}>
-                <motion.a
-                  href={resumePdf}
-                  download="Bhuvanesh_2025.pdf"
-                  whileHover={isGlass ? { y: -3, boxShadow: "0 8px 28px rgba(0,0,0,0.24)" } : { y: -3, boxShadow: "7px 7px 0 #2C2C2C" }}
-                  whileTap={isGlass ? { y: 1 } : { y: 1, boxShadow: "2px 2px 0 #2C2C2C" }}
-                  className="w-full py-4 rounded-2xl block text-center no-underline"
-                  style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 16, cursor: "pointer", transition: "box-shadow 0.18s, transform 0.18s", borderRadius: 16, textDecoration: "none", ...s.btnPrimary }}
-                >
-                  Download Resume
-                </motion.a>
-              </motion.div>
+              </div>
             </div>
+
+            {/* ── MIDDLE: Bio text card ── */}
+            <motion.div variants={itemVariants}>
+              <div className="rounded-2xl p-6" style={{ ...s.card, borderRadius: 20 }}>
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2.5 h-2.5 rounded-full" style={{ background: isGlass ? "rgba(80,88,115,0.55)" : "#7B8C2E" }} />
+                  <span style={{ fontWeight: 800, fontSize: 12, color: isGlass ? gc.light : "#7B8C2E" }}>
+                    Hey there !
+                  </span>
+                </div>
+                <p style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 600, fontSize: 14, color: isGlass ? "#3d4258" : "#444", lineHeight: 1.75, margin: 0 }}>
+                  {BIO_TEXT}
+                </p>
+              </div>
+            </motion.div>
+
+            {/* ── BOTTOM: Download Resume (Full Width) ── */}
+            <motion.div variants={itemVariants}>
+              <motion.a
+                href={resumePdf}
+                download="Bhuvanesh_2025.pdf"
+                whileHover={isGlass ? { y: -3, boxShadow: "0 8px 28px rgba(0,0,0,0.24)" } : { y: -3, boxShadow: "7px 7px 0 #2C2C2C" }}
+                whileTap={isGlass ? { y: 1 } : { y: 1, boxShadow: "2px 2px 0 #2C2C2C" }}
+                className="w-full py-4 rounded-2xl block text-center no-underline"
+                style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 16, cursor: "pointer", transition: "box-shadow 0.18s, transform 0.18s", borderRadius: 16, textDecoration: "none", ...s.btnPrimary }}
+              >
+                Download Resume
+              </motion.a>
+            </motion.div>
+
           </div>
         </motion.div>
       </div>

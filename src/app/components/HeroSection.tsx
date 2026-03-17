@@ -175,7 +175,22 @@ export function HeroSection() {
                   strokeWidth="4" fill="none" strokeLinecap="round" />
               </svg>
             </span>{" "}
-            👋
+            <motion.span
+              style={{ display: "inline-block", originX: 0.8, originY: 0.8, cursor: "default" }}
+              whileInView={{ rotate: [0, 14, -8, 12, 0] }}
+              viewport={{ once: true }}
+              whileHover={{
+                rotate: [0, 25, -15, 25, -15, 0],
+                transition: { duration: 0.6, ease: "easeInOut" }
+              }}
+              transition={{
+                duration: 1.2,
+                delay: 0.4,
+                ease: "easeInOut",
+              }}
+            >
+              👋
+            </motion.span>
           </motion.h1>
 
           {/* Tagline */}

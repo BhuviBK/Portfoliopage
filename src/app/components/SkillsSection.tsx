@@ -1,11 +1,11 @@
 import { motion } from "motion/react";
-import { Figma, Video, Layers, Code2, MessageSquare, LayoutGrid } from "lucide-react";
+import { Figma, Bot, Layers, Code2, MessageSquare, LayoutGrid } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import { t, gc } from "../styles/glassStyles";
 
 const skills = [
   { icon: Figma, label: "Figma", level: 90, color: "#7B8C2E" },
-  { icon: Video, label: "Vibe Coding - ClaudeAI, Cloudflare", level: 85, color: "#A8C042" },
+  { icon: Bot, label: "Vibe Coding - ClaudeAI, Cloudflare", level: 85, color: "#A8C042" },
   { icon: Layers, label: "Prototyping & Wireframing", level: 60, color: "#5A6620" },
   { icon: Code2, label: "Dev- Angular", level: 50, color: "#7B8C2E" },
   { icon: MessageSquare, label: "Conversational UX", level: 88, color: "#A8C042" },
