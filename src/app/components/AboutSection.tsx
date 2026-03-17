@@ -5,7 +5,7 @@ import { useTheme } from "../context/ThemeContext";
 import { t, gc } from "../styles/glassStyles";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 import resumePdf from "../../resource/Bhuvanesh_2025.pdf";
-import PROFILE_PHOTO from "../../resource/Aboutme.jpg";
+import PROFILE_PHOTO from "../../resource/me.jpg";
 
 const BIO_TEXT =
   "I’m a UI Designer with 3+ years of experience designing applications, dashboards, and conversational interfaces that turn complex problems into intuitive, user-friendly experiences. I focus on creating user-centric solutions, building scalable design systems, and crafting high-fidelity interfaces in Figma that are ready for seamless developer handoff. I enjoy experimenting with building real products and have hosted 3+ real-time applications using Vibecode that solve everyday challenges for designers and users.";
