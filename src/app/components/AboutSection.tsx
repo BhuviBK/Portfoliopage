@@ -4,7 +4,6 @@ import { MapPin, Briefcase, Layers, CheckCircle } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 import { t, gc } from "../styles/glassStyles";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import resumePdf from "../../resource/Bhuvanesh_2025.pdf";
 import PROFILE_PHOTO from "../../resource/me.jpg";
 
 const BIO_TEXT =
@@ -121,19 +120,7 @@ export function AboutSection() {
               </div>
             </motion.div>
 
-            {/* ── BOTTOM: Download Resume (Full Width) ── */}
-            <motion.div variants={itemVariants}>
-              <motion.a
-                href={resumePdf}
-                download="Bhuvanesh_2025.pdf"
-                whileHover={isGlass ? { y: -3, boxShadow: "0 8px 28px rgba(0,0,0,0.24)" } : { y: -3, boxShadow: "7px 7px 0 #2C2C2C" }}
-                whileTap={isGlass ? { y: 1 } : { y: 1, boxShadow: "2px 2px 0 #2C2C2C" }}
-                className="w-full py-4 rounded-2xl block text-center no-underline"
-                style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 16, cursor: "pointer", transition: "box-shadow 0.18s, transform 0.18s", borderRadius: 16, textDecoration: "none", ...s.btnPrimary }}
-              >
-                Download Resume
-              </motion.a>
-            </motion.div>
+
 
           </div>
         </motion.div>

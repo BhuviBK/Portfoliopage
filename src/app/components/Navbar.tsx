@@ -1,8 +1,7 @@
-import { Menu, X, Download, Sparkles, Paintbrush } from "lucide-react";
+import { Menu, X, Sparkles, Paintbrush } from "lucide-react";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { useTheme } from "../context/ThemeContext";
-import resumePdf from "../../resource/Bhuvanesh_2025.pdf";
 const navLinks = [
   { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
@@ -127,19 +126,7 @@ export function Navbar() {
             </AnimatePresence>
           </motion.button>
 
-          {/* Resume */}
-          <motion.a
-            href={resumePdf}
-            download="Bhuvanesh_2025.pdf"
-            whileHover={isGlass ? { scale: 1.06, y: -2, boxShadow: "0 8px 24px rgba(0,0,0,0.26)" } : { scale: 1.06, y: -2 }}
-            whileTap={{ scale: 0.95, y: 1 }}
-            className="ml-1 px-5 py-2.5 rounded-xl inline-flex items-center gap-2 no-underline"
-            style={isGlass
-              ? { fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 15, color: "#ffffff", background: "rgba(22,26,40,0.82)", backdropFilter: "blur(14px)", border: "1px solid rgba(255,255,255,0.20)", boxShadow: "0 4px 20px rgba(0,0,0,0.22)", cursor: "pointer", textDecoration: "none" }
-              : { fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 15, color: "#ffffff", background: "#5A6620", border: "3px solid #2C2C2C", boxShadow: "4px 4px 0 #2C2C2C", cursor: "pointer", textDecoration: "none" }}
-          >
-            <Download size={15} strokeWidth={3} /> Resume
-          </motion.a>
+
         </div>
 
         {/* ── Mobile Menu Button ── */}
