@@ -13,7 +13,7 @@ const infoCards = [
   { icon: MapPin, label: "Location", value: "Chennai, Tamilnadu" },
   { icon: Briefcase, label: "Experience", value: "4+ Years in UI/UX" },
   { icon: Layers, label: "Specialty", value: "Conversational UX, Vibe coding, Design Systems, AI Tools" },
-  { icon: CheckCircle, label: "Status", value: "Available ✦" },
+  { icon: CheckCircle, label: "Status", value: "Looking for work ✦" },
 ];
 
 const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };
