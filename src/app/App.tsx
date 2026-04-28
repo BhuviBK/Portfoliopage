@@ -144,6 +144,9 @@ function GlassBackground({ visible }: { visible: boolean }) {
   );
 }
 
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { ExpenseTrackerCaseStudy } from "./components/ExpenseTrackerCaseStudy";
+
 function AppInner() {
   const { isGlass } = useTheme();
 
@@ -165,13 +168,20 @@ function AppInner() {
 
       {/* Content sits above the glass backdrop */}
       <div style={{ position: "relative", zIndex: 2 }}>
-        <Navbar />
-        <HeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <ProjectsSection />
-        <ContactSection />
-        <Footer />
+        <Routes>
+          <Route path="/" element={
+            <>
+              <Navbar />
+              <HeroSection />
+              <AboutSection />
+              <SkillsSection />
+              <ProjectsSection />
+              <ContactSection />
+              <Footer />
+            </>
+          } />
+          <Route path="/expense-tracker-case-study" element={<ExpenseTrackerCaseStudy />} />
+        </Routes>
       </div>
     </div>
   );
@@ -179,8 +189,10 @@ function AppInner() {
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <AppInner />
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider>
+        <AppInner />
+      </ThemeProvider>
+    </Router>
   );
 }

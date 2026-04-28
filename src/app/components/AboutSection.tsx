@@ -12,7 +12,7 @@ const BIO_TEXT =
 const infoCards = [
   { icon: MapPin, label: "Location", value: "Chennai, Tamilnadu" },
   { icon: Briefcase, label: "Experience", value: "4+ Years in UI/UX" },
-  { icon: Layers, label: "Specialty", value: "14+ UI Designs, AI UI/UX" },
+  { icon: Layers, label: "Specialty", value: "Conversational UX, Vibe coding, Design Systems, AI Tools" },
   { icon: CheckCircle, label: "Status", value: "Available ✦" },
 ];
 
