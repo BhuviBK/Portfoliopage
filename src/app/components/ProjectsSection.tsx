@@ -16,7 +16,7 @@ const projects = [
     accent: "#7B8C2E", 
     bg: "#F2F6DB",
     image: expenseTrackerImg,
-    link: "/expense-tracker-case-study",
+    link: "https://docs.google.com/presentation/d/1Oo1qjhkbqx6CsZR3PA6mVx0CQ5jM7uPv/edit?slide=id.p1#slide=id.p1",
     isWIP: false
   },
   { 
