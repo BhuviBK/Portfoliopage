@@ -31,7 +31,7 @@ const projects = [
     id: 2,
     tag: "UX research",
     title: "Dashboard",
-    desc: "[ Dashboard - for an enterprise tool tracking over all pending and urget tasks PMO ]",
+    desc: "[Enterprise PMO Dashboard – A centralized dashboard designed to help Project Management Offices (PMOs) monitor overall project health, track pending and urgent tasks, and improve operational visibility. ]",
     chips: ["Figma", "User interviews", "Wireframe", "Usablility Testing"],
     accent: "#7B8C2E",
     bg: "#F2F6DB",
