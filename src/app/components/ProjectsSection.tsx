@@ -276,13 +276,13 @@ export function ProjectsSection() {
               </h2>
               <div className="rounded-full" style={{ width: 60, height: 5, ...s.rule }} />
             </div>
-            <motion.button
+            {/* <motion.button
               whileHover={isGlass ? { y: -3, boxShadow: "0 8px 24px rgba(0,0,0,0.10)" } : { y: -3, boxShadow: "6px 6px 0 #2C2C2C" }}
               whileTap={isGlass ? { y: 1 } : { y: 1, boxShadow: "2px 2px 0 #2C2C2C" }}
               className="px-6 py-3 rounded-xl"
               style={{ fontFamily: "'Nunito', sans-serif", fontWeight: 800, fontSize: 15, cursor: "pointer", borderRadius: 14, ...s.btnSecondary }}>
               See All →
-            </motion.button>
+            </motion.button> */}
           </motion.div>
 
           {/* Cards */}
