@@ -7,13 +7,13 @@ import { ImageWithFallback } from "./figma/ImageWithFallback";
 import PROFILE_PHOTO from "../../resource/me.jpg";
 
 const BIO_TEXT =
-  "I’m a UI Designer with 3+ years of experience designing applications, dashboards, and conversational interfaces that turn complex problems into intuitive, user-friendly experiences. I focus on creating user-centric solutions, building scalable design systems, and crafting high-fidelity interfaces in Figma that are ready for seamless developer handoff. I enjoy experimenting with building real products and have hosted 3+ real-time applications using Vibecode that solve everyday challenges for designers and users.";
+  "With 4+ years of experience in UI/UX design, I create intuitive digital experiences for enterprise applications, dashboards, and conversational interfaces. My work combines user-centered thinking, scalable design systems, and pixel-perfect interfaces to simplify complex workflows and deliver seamless developer handoff. Outside of my professional work, I enjoy experimenting with new ideas by building and launching real-world products using VibeCode, turning everyday problems into practical digital solutions.";
 
 const infoCards = [
   { icon: MapPin, label: "Location", value: "Chennai, Tamilnadu" },
   { icon: Briefcase, label: "Experience", value: "4+ Years in UI/UX" },
-  { icon: Layers, label: "Specialty", value: "Conversational UX, Vibe coding, Design Systems, AI Tools" },
-  { icon: CheckCircle, label: "Status", value: "Looking for work ✦" },
+  { icon: Layers, label: "Specialty", value: "Conversational UX, Vibe coding, Design Systems, Enterprise Applications" },
+  { icon: CheckCircle, label: "Status", value: "Let's Connect ✦" },
 ];
 
 const containerVariants = { hidden: {}, visible: { transition: { staggerChildren: 0.1 } } };

@@ -42,7 +42,7 @@ const projects = [
   },
   {
     id: 3,
-    tag: "Dashboard",
+    tag: "Info",
     title: "Enterprise Projects",
     desc: "",
     chips: [],
