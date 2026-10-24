@@ -36,7 +36,7 @@ const projects = [
     accent: "#7B8C2E",
     bg: "#F2F6DB",
     image: grocersImg,
-    link: "https://www.figma.com/slides/https://www.figma.com/deck/tkYgE9Z0wU6xVJ8MVgXj1X/Dashboard?node-id=1-42&t=zSp8ZK0s91FLMqsE-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
+    link: "https://www.figma.com/deck/tkYgE9Z0wU6xVJ8MVgXj1X/Dashboard?node-id=1-42&t=zSp8ZK0s91FLMqsE-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
     isWIP: false,
     isDummy: false
   },
