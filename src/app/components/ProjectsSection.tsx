@@ -17,13 +17,13 @@ const projects = [
   {
     id: 1,
     tag: "Tracker",
-    title: "Expense Tracker",
+    title: "Everyday Task",
     desc: "[ Everyday Task All-in-One Life Companion - Build with AI-Vibecode with Supabase Backend ]",
     chips: ["Figma", "Vibe code", "Supabase", "Loveable ai"],
     accent: "#7B8C2E",
     bg: "#F2F6DB",
     image: expenseTrackerImg,
-    link: "https://docs.google.com/presentation/d/1Oo1qjhkbqx6CsZR3PA6mVx0CQ5jM7uPv/edit?slide=id.p1#slide=id.p1",
+    link: "https://www.figma.com/deck/lCsTJOuj7EjfqZZsgiJwju/Untitled?node-id=1-45&viewport=-150%2C-152%2C0.72&t=lV4ymdUI0LByUPuA-1&scaling=min-zoom&content-scaling=fixed&page-id=0%3A1",
     isWIP: false,
     isDummy: false
   },
